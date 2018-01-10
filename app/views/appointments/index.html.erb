@@ -1,16 +1,16 @@
 <div class="fluid-container">
 	<h1>Appointment Calendar</h1>
 
-	<h3>Make A New Appointment</h3>
+	<%= react_component 'Appointments', appointments: @appointments %>
 
-	<%= simple_form_for @appointment, remote: true do |f| %>
-		<%= f.input :title %>
-		<%= f.input :appt_time %>
-		<%= f.button :submit %>
-	<% end %>
+	<%#= simple_form_for @appointment, remote: true do |f| %>
+		<%#= f.input :title %>
+		<%#= f.input :appt_time %>
+		<%#= f.button :submit %>
+	<%# end %>
 
 	<div id="appointments">
-		<%= render 'appointment_partial' %>
+		<%#= render 'appointment_partial' %>
 	</div>
 </div>
 
