@@ -8,7 +8,6 @@ class Appointments extends React.Component {
 	  	}
 
 	  	this.handleUserInput = this.handleUserInput.bind(this)
-	  	this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
 	handleUserInput(obj) {
@@ -18,27 +17,13 @@ class Appointments extends React.Component {
 	  	});
 	}
 
-	handleFormSubmit() {
-		let appointment = {
-			title: this.state.title,
-			appt_time: this.state.appt_time
-		}
-
-		$.post('/appointments',
-				{appointment: appointment})
-			.done(data = () => {
-				this.addNewAppointment(data)
-			});
-	}
-
 	render () {
 		return (
 			<div>
 				<AppointmentForm
 					input_title={this.state.input_title}
 					input_appt_time={this.state.input_appt_time}
-					onUserInput={this.handleUserInput}
-					onFormSubmit={this.handleFormSubmit} />
+					onUserInput={this.handleUserInput} />
 				
 				<AppointmentsList appointments={this.state.appointments} />
 			</div>
